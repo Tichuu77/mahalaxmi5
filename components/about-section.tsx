@@ -151,7 +151,7 @@ export default function AboutSection() {
             <div className="space-y-3">
               <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md border-l-4 border-primary">
                 <p className="text-sm sm:text-base text-gray-700">
-                  With <span className="font-bold text-primary">20+ years of excellence</span>, Mahalaxmi Developers is a
+                  With <span className="font-bold text-primary">20+ years of excellence</span>, Mahalaxmi  Infra is a
                   <span className="font-semibold text-secondary"> trusted name</span> delivering premium
                   residential and commercial spaces across Nagpur.
                 </p>

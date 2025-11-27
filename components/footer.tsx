@@ -37,7 +37,7 @@ export function Footer() {
                 style={{ fontFamily: "var(--font-heading, Poppins, sans-serif)" }}
                 className="font-black text-white text-lg leading-tight"
               >
-                Mahalaxmi<br/>Developers
+                Mahalaxmi<br/> Infra
               </span>
             </div>
             <p className="text-white/80 lg:ml-5 text-sm leading-relaxed">
@@ -165,7 +165,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex justify-center items-center text-white/80 text-sm">
           <p className="flex items-center gap-1">
-            © {currentYear} Mahalaxmi Developers. Made with 
+            © {currentYear} Mahalaxmi  Infra. Made with 
             <Heart className="w-4 h-4 text-red-400 fill-red-400 animate-float" /> 
             in India
           </p>

@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Mahalaxmi Developers",
+  title: "Mahalaxmi Infra",
   description: "Mahalaxmi Developers - NMRDA & RL Residential Plotted Project",
   generator: "v0.app",
   icons: "/Mahalaxmi Infra new Logo.png"

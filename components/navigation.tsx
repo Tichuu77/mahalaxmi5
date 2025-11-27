@@ -29,7 +29,7 @@ export function Navigation() {
               style={{ fontFamily: "var(--font-heading, Poppins, sans-serif)" }}
               className="font-bold text-primary text-xl"
             >
-             Mahalaxmi Developers
+             Mahalaxmi  Infra
             </span>
           </div>
 
