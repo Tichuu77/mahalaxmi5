@@ -111,7 +111,7 @@ export default function AboutSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[280px] sm:h-[400px] lg:h-[600px]">
               <img
                 src="/aboutUs.webp"
-                alt="About Mahalaxmi Developers"
+                alt="About Mahalaxmi  Infra"
                 className="w-full h-full object-cover"
               />
 

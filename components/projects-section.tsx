@@ -30,7 +30,7 @@ const projects: {
       id: 3,
       title: "Mahalaxmi Nagar-39",
       image: "/ongoingProject5.webp",
-      description: `Katol Road Mahalaxmi Developers Launched Project Mahalaxmi Nagar-39 This Project Located Fetri (Chicholi) New Outer Ring Road Touch Layout.`,
+      description: `Katol Road Mahalaxmi  Infra Launched Project Mahalaxmi Nagar-39 This Project Located Fetri (Chicholi) New Outer Ring Road Touch Layout.`,
       location: `MOUZA - CHICHOLI`,
       status: "ongoing"
     },
@@ -74,7 +74,7 @@ Location - The Project is Situated in Mouza - Sumthana Behind Godrej Properties 
       id: 11,
       title: "Mahalaxmi Nagar - 47",
       image: "/ongoingProject12.jpg",
-      description: `Mahalaxmi Developers New Project Launch In Koradi Road,(Nanda) This Project Located are Behind Haldiram,AM Cinema,Rokde Jwellers & Naivedyam Hotel
+      description: `Mahalaxmi  Infra New Project Launch In Koradi Road,(Nanda) This Project Located are Behind Haldiram,AM Cinema,Rokde Jwellers & Naivedyam Hotel
 This Project Fully NMRDA & RL Residential Plotted Project With upto 90% Bank Finance Available.`,
       location: `MOUZA - KORADI ROAD HALDIRAM & AM CINEMA BACKSIDE`,
       status: "ongoing"
@@ -85,7 +85,7 @@ This Project Fully NMRDA & RL Residential Plotted Project With upto 90% Bank Fin
       id: 12,
       title: "Mahalaxmi Nagar - 37",
       image: "/completedProject1.webp",
-      description: `Mahalaxmi Developers launched the project Mahalaxmi Nagar 37. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
+      description: `Mahalaxmi  Infra launched the project Mahalaxmi Nagar 37. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
       location: `MOUZA - KOTEWADA`,
       status: "completed"
     },
@@ -93,7 +93,7 @@ This Project Fully NMRDA & RL Residential Plotted Project With upto 90% Bank Fin
       id: 13,
       title: "Mahalaxmi Nagar - 35",
       image: "/completedProject2.webp",
-      description: `Mahalaxmi Developers launched the project Mahalaxmi Nagar 35. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
+      description: `Mahalaxmi  Infra launched the project Mahalaxmi Nagar 35. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
       location: `MOUZA - KOTEWADA`,
       status: "completed"
     },
@@ -101,7 +101,7 @@ This Project Fully NMRDA & RL Residential Plotted Project With upto 90% Bank Fin
       id: 14,
       title: "Mahalaxmi Nagar - 34",
       image: "/completedProject3.webp",
-      description: `Mahalaxmi Developers launched the project Mahalaxmi Nagar 34. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
+      description: `Mahalaxmi Infra launched the project Mahalaxmi Nagar 34. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
       location: `MOUZA - BAHADURA`,
       status: "completed"
     },

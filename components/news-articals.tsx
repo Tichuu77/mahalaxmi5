@@ -20,9 +20,9 @@ const newsArticles = [
     id: 2,
     title: "Sustainable Development: Our Commitment to Green Living",
     excerpt:
-      "Learn how Mahalaxmi Developers is pioneering eco-friendly construction practices and green spaces.",
+      "Learn how Mahalaxmi  Infra is pioneering eco-friendly construction practices and green spaces.",
     fullContent:
-      "At Mahalaxmi Developers, sustainability isn't just a trend — it's a commitment. From solar energy integration to rainwater harvesting, every project embraces green building standards. Our mission is to create living spaces that harmonize with nature while minimizing carbon footprint, offering a healthier and cleaner future for generations to come.",
+      "At Mahalaxmi  Infra, sustainability isn't just a trend — it's a commitment. From solar energy integration to rainwater harvesting, every project embraces green building standards. Our mission is to create living spaces that harmonize with nature while minimizing carbon footprint, offering a healthier and cleaner future for generations to come.",
     date: "March 10, 2025",
     author: "Sustainability Team",
     category: "Sustainability",
@@ -115,7 +115,7 @@ export default function NewsArticles() {
           </h2>
           
           <p className="text-sm sm:text-base text-primary/70 max-w-2xl mx-auto leading-relaxed">
-            Stay updated with the latest news, project launches, and insights from Mahalaxmi Developers
+            Stay updated with the latest news, project launches, and insights from Mahalaxmi  Infra
           </p>
         </div>
 
