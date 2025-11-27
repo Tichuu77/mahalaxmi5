@@ -116,8 +116,11 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
+                Rajesh Ingle
+              </li>
+              <li>
                 <a 
-                  href="tel:+919112086429"
+                  href="tel:+919822172379"
                   className="group flex items-start gap-3 text-white/80 hover:text-white transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-all">
@@ -125,13 +128,13 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-xs text-white/60 mb-0.5">Call Us</p>
-                    <p className="text-sm font-semibold">+91 9112086429</p>
+                    <p className="text-sm font-semibold">+91 9822172379</p>
                   </div>
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:takotepankaj6@gmail.com"
+                  href="mailto:rajeshgingle@gmail.com"
                   className="group flex items-start gap-3 text-white/80 hover:text-white transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-all">
@@ -139,7 +142,7 @@ export function Footer() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs text-white/60 mb-0.5">Email Us</p>
-                    <p className="text-sm font-semibold break-all">takotepankaj6@gmail.com</p>
+                    <p className="text-sm font-semibold break-all">rajeshgingle@gmail.com</p>
                   </div>
                 </a>
               </li>

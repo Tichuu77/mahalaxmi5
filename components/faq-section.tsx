@@ -159,14 +159,14 @@ export function FAQSection() {
                 </p>
                 <div className="space-y-2">
                   <a
-                    href="tel:+919112086429"
+                    href="tel:+919822172379"
                     className="flex items-center gap-2 text-sm font-semibold hover:text-white/80 transition-colors"
                   >
                     <Phone className="w-4 h-4" />
-                    +91 9112086429
+                    +91 9822172379
                   </a>
                   <a
-                    href="mailto:info@mahalaxmi.com"
+                    href="mailto:rajeshgingle@gmail.com"
                     className="flex items-center gap-2 text-sm font-semibold hover:text-white/80 transition-colors"
                   >
                     <Mail className="w-4 h-4" />
@@ -296,10 +296,10 @@ export function FAQSection() {
                 Contact Us Now
               </button>
               <a
-                href="tel:+919112086429"
+                href="tel:+919822172379"
                 className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-xl font-bold text-sm sm:text-base transition-all hover:scale-105 hover:bg-primary/5"
               >
-                Call +91 9112086429
+                Call +91 9822172379
               </a>
             </div>
           </div>

@@ -111,7 +111,7 @@ export default function ContactSection() {
             {/* Contact Cards */}
             <div className="space-y-4">
               <a 
-                href="tel:+919112086429"
+                href="tel:+919822172379"
                 className="group block relative overflow-hidden bg-white p-6 rounded-2xl border-2 border-primary/20 hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full" />
@@ -125,7 +125,7 @@ export default function ContactSection() {
                       <span className="text-xs font-normal px-2 py-0.5 bg-primary/10 text-primary rounded-full">Call Now</span>
                     </h3>
                     <p className="text-primary group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all font-bold text-lg">
-                      +91 9112086429
+                     +91 9822172379
                     </p>
                     <p className="text-primary/60 text-sm mt-1 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
@@ -136,7 +136,7 @@ export default function ContactSection() {
               </a>
 
               <a 
-                href="mailto:takotepankaj6@gmail.com"
+                href="mailto:rajeshgingle@gmail.com"
                 className="group block relative overflow-hidden bg-white p-6 rounded-2xl border-2 border-secondary/20 hover:border-secondary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-secondary/10 to-transparent rounded-bl-full" />
@@ -150,7 +150,7 @@ export default function ContactSection() {
                       <span className="text-xs font-normal px-2 py-0.5 bg-secondary/10 text-secondary rounded-full">Write Us</span>
                     </h3>
                     <p className="text-primary group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-secondary group-hover:to-primary transition-all font-bold text-base break-all">
-                      takotepankaj6@gmail.com
+                     rajeshgingle@gmail.com
                     </p>
                     <p className="text-primary/60 text-sm mt-1 flex items-center gap-1">
                       <CheckCircle className="w-3 h-3" />
