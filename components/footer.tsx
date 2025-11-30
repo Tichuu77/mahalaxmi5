@@ -43,6 +43,9 @@ export function Footer() {
             <p className="text-white/80 lg:ml-5 text-sm leading-relaxed">
               Delivering premium real estate solutions with excellence and innovation since years.
             </p>
+             <p className="text-white/80 lg:ml-5 mt-2 text-sm leading-relaxed">
+              MAHA RERA NO. A50500042829
+            </p>
           </div>
 
           {/* Quick Links */}
