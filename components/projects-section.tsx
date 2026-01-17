@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowRight, MapPin, Phone, Building2, Sparkles, Star, Eye } from "lucide-react"
 
 type Project = {
@@ -10,6 +10,7 @@ type Project = {
   description: string
   location: string
   status: string
+  videoId?: string
 }
 
 const projects: {
@@ -18,20 +19,32 @@ const projects: {
   upcoming: Project[]
 } = {
   ongoing: [
-    {
-      id: 2,
-      title: "Mahalaxmi Nagar-31",
-      image: "/ongoingProject8.webp",
-      description: `This Project Ready to Move and Fully Residential Layout Are Located Besa-Pipla Road Opposite Zudio, Croma on Prime Location and upto 90% Bank Finance Available.`,
-      location: `MOUZA - PIPLA`,
-      status: "ongoing"
+     {
+      id: 7,
+      title: "Mahalaxmi Nagar - 45",
+      image: "/ongoingProject11.webp",
+      description: `Mahalaxmi Nagar-45 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg
+Location - The Project is Situated in Mouza - Sumthana Behind Godrej Properties Close to D- Mart Connectivity - The Location Offers Excellent Connectivity to Major City Hubs, Including Nagpur Airport, AIIMS, IIM, TCS, INFOSYS,TECH MAHINDRA, Patanjali as soon as Mihan.`,
+      location: `MOUZA - SHANKARPUR`,
+      status: "ongoing",
+      videoId: "Mahalaxmi_Infra_bite_3_20-12-25mp4_dk19mt"
     },
     {
-      id: 3,
-      title: "Mahalaxmi Nagar-39",
-      image: "/ongoingProject5.webp",
-      description: `Katol Road Mahalaxmi  Infra Launched Project Mahalaxmi Nagar-39 This Project Located Fetri (Chicholi) New Outer Ring Road Touch Layout.`,
-      location: `MOUZA - CHICHOLI`,
+      id: 6,
+      title: "Mahalaxmi Nagar - 43",
+      image: "/ongoingProject10.webp",
+      description: `Ready to Move Project by Mahalaxmi Nagar-43 offering Residential Plot With Aminities Behind Royal Gondwana School & Singapure City Shankarpur, Nagpur 
+An Affordable Price & Fully Developed NMRDA & RL upto 90% Bank Finance Available.`,
+      location: `MOUZA - SHANKARPUR`,
+      status: "ongoing"
+    },
+     {
+      id: 5,
+      title: "Mahalaxmi Nagar - 42",
+      image: "/ongoingProject2.webp",
+      description: `Mahalaxmi Nagar – 42, near Jamtha on Wardha Road, offers well-connected plots perfect for homes or businesses. Approved by NMRDA and equipped with RL, this project comes with excellent amenities and easy bank finance options.
+Best for investment to buy plots in Nagpur.`,
+      location: `MOUZA - JAMTHA`,
       status: "ongoing"
     },
     {
@@ -43,100 +56,58 @@ A Prime Location in Nagpur for Smart Investment.`,
       location: `MOUZA - GOMGAON`,
       status: "ongoing"
     },
-    {
-      id: 5,
-      title: "Mahalaxmi Nagar - 42",
-      image: "/ongoingProject2.webp",
-      description: `Mahalaxmi Nagar – 42, near Jamtha on Wardha Road, offers well-connected plots perfect for homes or businesses. Approved by NMRDA and equipped with RL, this project comes with excellent amenities and easy bank finance options.
-Best for investment to buy plots in Nagpur.`,
-      location: `MOUZA - JAMTHA`,
-      status: "ongoing"
-    },
-    {
-      id: 6,
-      title: "Mahalaxmi Nagar - 43",
-      image: "/ongoingProject10.webp",
-      description: `Ready to Move Project by Mahalaxmi Nagar-43 offering Residential Plot With Aminities Behind Royal Gondwana School & Singapure City Shankarpur, Nagpur 
-An Affordable Price & Fully Developed NMRDA & RL upto 90% Bank Finance Available.`,
-      location: `MOUZA - SHANKARPUR`,
-      status: "ongoing"
-    },
-    {
-      id: 7,
-      title: "Mahalaxmi Nagar - 45",
-      image: "/ongoingProject11.webp",
-      description: `Mahalaxmi Nagar-45 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg
-Location - The Project is Situated in Mouza - Sumthana Behind Godrej Properties Close to D- Mart Connectivity - The Location Offers Excellent Connectivity to Major City Hubs, Including Nagpur Airport, AIIMS, IIM, TCS, INFOSYS,TECH MAHINDRA, Patanjali as soon as Mihan.`,
-      location: `MOUZA - SHANKARPUR`,
-      status: "ongoing"
-    },
-    {
-      id: 11,
-      title: "Mahalaxmi Nagar - 47",
-      image: "/ongoingProject12.jpg",
-      description: `Mahalaxmi  Infra New Project Launch In Koradi Road,(Nanda) This Project Located are Behind Haldiram,AM Cinema,Rokde Jwellers & Naivedyam Hotel
-This Project Fully NMRDA & RL Residential Plotted Project With upto 90% Bank Finance Available.`,
-      location: `MOUZA - KORADI ROAD HALDIRAM & AM CINEMA BACKSIDE`,
-      status: "ongoing"
-    },
   ],
-  completed: [
-    {
-      id: 12,
-      title: "Mahalaxmi Nagar - 37",
-      image: "/completedProject1.webp",
-      description: `Mahalaxmi  Infra launched the project Mahalaxmi Nagar 37. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
-      location: `MOUZA - KOTEWADA`,
-      status: "completed"
-    },
-    {
-      id: 13,
-      title: "Mahalaxmi Nagar - 35",
-      image: "/completedProject2.webp",
-      description: `Mahalaxmi  Infra launched the project Mahalaxmi Nagar 35. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
-      location: `MOUZA - KOTEWADA`,
-      status: "completed"
-    },
-    {
-      id: 14,
-      title: "Mahalaxmi Nagar - 34",
-      image: "/completedProject3.webp",
-      description: `Mahalaxmi Infra launched the project Mahalaxmi Nagar 34. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.`,
-      location: `MOUZA - BAHADURA`,
-      status: "completed"
-    },
-  ],
-  upcoming: [
-    {
-      id: 15,
-      title: "Mahalaxmi Nagar - 48",
-      image: "/plotDef.avif",
-      description: ``,
-      location: ``,
-      status: "upcoming"
-    },
-    {
-      id: 16,
-      title: "Mahalaxmi Nagar - 49",
-      image: "/plotDef.avif",
-      description: ``,
-      location: ``,
-      status: "upcoming"
-    },
-    {
-      id: 17,
-      title: "Mahalaxmi Nagar - 50",
-      image: "/plotDef.avif",
-      description: ``,
-      location: ``,
-      status: "upcoming"
-    },
-  ]
+  completed: [],
+  upcoming: []
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
+  const [playerInstance, setPlayerInstance] = useState<any>(null)
+
+  useEffect(() => {
+    if (showVideo && project.videoId) {
+      const initPlayer = () => {
+        if ((window as any).cloudinary?.videoPlayer) {
+          const player = (window as any).cloudinary.videoPlayer(`player-${project.id}`, {
+            cloudName: 'dxujnm2sl',
+            publicId: project.videoId,
+            controls: true,
+            autoplay: true,
+            fluid: true,
+            aspectRatio: '9:16',
+            playbackRates: [0.5, 1, 1.5, 2]
+          });
+          setPlayerInstance(player);
+        }
+      };
+      
+      if ((window as any).cloudinary?.videoPlayer) {
+        initPlayer();
+      } else {
+        setTimeout(initPlayer, 500);
+      }
+    }
+    
+    return () => {
+      if (playerInstance) {
+        try {
+          playerInstance.dispose();
+        } catch (e) {}
+      }
+    };
+  }, [showVideo, project.videoId, project.id])
+  
+  const handleCloseVideo = () => {
+    if (playerInstance) {
+      try {
+        playerInstance.pause();
+      } catch (e) {}
+    }
+    setShowVideo(false);
+  };
 
   const statusConfig = {
     completed: { label: "Completed", color: "bg-primary" },
@@ -145,7 +116,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   }
 
   const config = statusConfig[project.status as keyof typeof statusConfig]
-  const isLarge = index % 7 === 0 // Every 7th card is large
+  const isLarge = index % 7 === 0
 
   const handleWhatsApp = () => {
     const message = `Hi, I'm interested in ${project.title}. Please share more details.`
@@ -161,29 +132,58 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         isLarge ? 'rounded-3xl' : 'rounded-2xl'
       }`}
     >
-      {/* Diagonal split background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
       
-      {/* Image section - Side by side layout for large cards */}
-      <div className={`relative ${isLarge ? 'lg:flex' : ''}`}>
-        <div className={`relative overflow-hidden ${isLarge ? 'lg:w-1/2' : 'w-full'} ${isLarge ? 'h-64 lg:h-auto' : 'h-48'}`}>
-          <img
-            src={project.image || "/placeholder.svg"}
-            alt={project.title}
-            className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110 rotate-2' : 'scale-100'}`}
-          />
+      <div className={`relative ${isLarge ? 'lg:flex' : ''} ${showVideo ? 'lg:min-h-[700px]' : ''}`}>
+        <div className={`relative overflow-hidden ${isLarge ? 'lg:w-1/2' : 'w-full'} ${showVideo ? 'h-[500px] lg:h-[700px]' : isLarge ? 'h-64 lg:h-auto' : 'h-48'}`}>
+          {project.videoId && showVideo ? (
+            <div className="absolute inset-0 bg-black z-30 flex flex-col">
+              <button
+                onClick={handleCloseVideo}
+                className="absolute top-3 right-3 z-50 w-10 h-10 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-white shadow-xl transition-all text-lg font-bold"
+              >
+                ✕
+              </button>
+              <div className="flex-1 w-full">
+                <video
+                  id={`player-${project.id}`}
+                  className="cld-video-player"
+                  controls
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
+            </div>
+          ) : (
+            <>
+              <img
+                src={project.image || "/placeholder.svg"}
+                alt={project.title}
+                className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110 rotate-2' : 'scale-100'}`}
+              />
+              
+              {project.videoId && (
+                <button
+                  onClick={() => setShowVideo(true)}
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors group z-10"
+                >
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-0 h-0 border-l-[20px] border-l-primary border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                  </div>
+                </button>
+              )}
+            </>
+          )}
           
-          {/* Diagonal overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/90 via-primary/50 to-transparent opacity-80"></div>
+          {!showVideo && (
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/90 via-primary/50 to-transparent opacity-80"></div>
+          )}
           
-          {/* Status badge - floating */}
           <div className="absolute top-4 right-4 z-20">
             <div className={`${config.color} text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-lg backdrop-blur-sm`}>
               {config.label}
             </div>
           </div>
 
-          {/* Project number - large */}
           <div className="absolute bottom-4 left-4 z-20">
             <div className="text-white/30 text-6xl font-black leading-none">
               {project.title.split('-')[1] || project.id}
@@ -191,9 +191,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
 
-        {/* Content section */}
-        <div className={`relative p-5 ${isLarge ? 'lg:w-1/2 lg:p-8' : ''}`}>
-          {/* Title with underline */}
+        <div className={`relative p-5 ${isLarge ? 'lg:w-1/2 lg:p-8' : ''} ${showVideo ? 'lg:flex lg:flex-col lg:justify-center' : ''}`}>
           <div className="mb-4">
             <h3 className={`font-black text-primary mb-2 ${isLarge ? 'text-2xl lg:text-3xl' : 'text-lg'}`}>
               {project.title}
@@ -201,7 +199,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <div className="h-1 w-16 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
           </div>
 
-          {/* Location - horizontal layout */}
           {project.location && (
             <div className="flex items-start gap-2 mb-4 p-3 bg-secondary/10 rounded-xl">
               <MapPin className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
@@ -209,7 +206,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </div>
           )}
 
-          {/* Description with expand */}
           {project.description && (
             <div className="mb-4">
               <p className={`text-sm text-primary/70 leading-relaxed ${!isExpanded && !isLarge ? 'line-clamp-2' : ''}`}>
@@ -226,13 +222,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </div>
           )}
 
-          {/* Tags - stacked layout */}
           <div className="flex gap-2 mb-4">
             <span className="px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg">NMRDA</span>
             <span className="px-3 py-1.5 bg-secondary text-white text-xs font-bold rounded-lg">90% Finance</span>
           </div>
 
-          {/* CTA buttons - dual action */}
           <div className="flex gap-2">
             <button
               onClick={handleWhatsApp}
@@ -241,19 +235,32 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <Phone className="w-4 h-4" />
               Contact
             </button>
-            
           </div>
         </div>
       </div>
 
-      {/* Decorative corner element */}
       <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/20 to-transparent ${isHovered ? 'scale-150' : 'scale-100'} transition-transform duration-500`}></div>
     </div>
   )
 }
 
-export  function ProjectsSection() {
+export function ProjectsSection() {
   const [activeTab, setActiveTab] = useState<"all" | "completed" | "ongoing" | "upcoming">("all")
+
+  useEffect(() => {
+    if (!document.getElementById('cloudinary-script')) {
+      const script = document.createElement('script');
+      script.id = 'cloudinary-script';
+      script.src = 'https://unpkg.com/cloudinary-video-player@2.1.3/dist/cld-video-player.min.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/cloudinary-video-player@2.1.3/dist/cld-video-player.min.css';
+      document.head.appendChild(link);
+    }
+  }, [])
 
   const allProjects = [
     ...projects.ongoing,
@@ -269,7 +276,6 @@ export  function ProjectsSection() {
   return (
     <section id="projects" className="py-20 lg:py-32 bg-background relative overflow-hidden">
       
-      {/* Grid pattern background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px)`,
@@ -277,13 +283,11 @@ export  function ProjectsSection() {
         }}></div>
       </div>
 
-      {/* Floating orbs */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Asymmetric header */}
         <div className="grid lg:grid-cols-2 gap-8 items-end mb-16">
           <div>
             <div className="flex items-center gap-3 mb-5">
@@ -304,7 +308,6 @@ export  function ProjectsSection() {
             </p>
           </div>
 
-          {/* Stats cards */}
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center p-4 bg-white rounded-2xl shadow-lg border-l-4 border-primary">
               <div className="text-3xl font-black text-primary">{projects.ongoing.length}</div>
@@ -321,7 +324,6 @@ export  function ProjectsSection() {
           </div>
         </div>
 
-        {/* Horizontal filter tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {[
             { label: "All Projects", value: "all" },
@@ -343,7 +345,6 @@ export  function ProjectsSection() {
           ))}
         </div>
 
-        {/* Masonry-style grid */}
         <div>
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -361,7 +362,6 @@ export  function ProjectsSection() {
           )}
         </div>
 
-        {/* Full width CTA */}
         <div className="mt-20 bg-gradient-to-r from-primary via-secondary to-primary rounded-3xl p-10 lg:p-16 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
           
