@@ -27,7 +27,7 @@ export default function AboutSection() {
   }, [])
 
   const animateCounters = () => {
-    const targets = { projects: 50, clients: 1000, years: 20, sqft: 500 }
+    const targets = { projects: 67, clients: 17000, years: 13, sqft: 500 }
     const duration = 2000
     const steps = 60
     const increment = duration / steps
@@ -94,7 +94,7 @@ export default function AboutSection() {
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-primary leading-tight">
             Building Dreams Into
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-              Reality Since 20+ Years
+              Reality Since 13+ Years
             </span>
           </h2>
 
@@ -151,7 +151,7 @@ export default function AboutSection() {
             <div className="space-y-3">
               <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md border-l-4 border-primary">
                 <p className="text-sm sm:text-base text-gray-700">
-                  With <span className="font-bold text-primary">20+ years of excellence</span>, Mahalaxmi  Infra is a
+                  With <span className="font-bold text-primary">13+ years of excellence</span>, Mahalaxmi  Infra is a
                   <span className="font-semibold text-secondary"> trusted name</span> delivering premium
                   residential and commercial spaces across Nagpur.
                 </p>
@@ -160,7 +160,7 @@ export default function AboutSection() {
               <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md border-l-4 border-secondary">
                 <p className="text-sm sm:text-base text-gray-700">
                   We ensure <span className="text-primary font-semibold">legal transparency</span> and unmatched value,
-                  helping <span className="font-bold text-secondary">1000+ families</span> find their dream homes.
+                  helping <span className="font-bold text-secondary">17000+ families</span> find their dream homes.
                 </p>
               </div>
             </div>

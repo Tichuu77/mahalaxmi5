@@ -99,14 +99,14 @@ export  function WhyChooseUsSection() {
             <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary">
               <div className="flex items-center gap-2 mb-2">
                 <Award className="w-5 h-5 text-primary" />
-                <span className="text-3xl font-black text-primary">10+</span>
+                <span className="text-3xl font-black text-primary">13+</span>
               </div>
               <p className="text-sm text-gray-600 font-bold">Years Experience</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-secondary">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="w-5 h-5 text-secondary" />
-                <span className="text-3xl font-black text-secondary">500+</span>
+                <span className="text-3xl font-black text-secondary">17000+</span>
               </div>
               <p className="text-sm text-gray-600 font-bold">Happy Clients</p>
             </div>
