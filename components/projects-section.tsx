@@ -22,7 +22,7 @@ const projects: {
      {
       id: 7,
       title: "Mahalaxmi Nagar - 45",
-      image: "/ongoingProject11.webp",
+      image: "/M-45-THUMBNAIL.jpg.jpeg",
       description: `Mahalaxmi Nagar-45 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg
 Location - The Project is Situated in Mouza - Sumthana Behind Godrej Properties Close to D- Mart Connectivity - The Location Offers Excellent Connectivity to Major City Hubs, Including Nagpur Airport, AIIMS, IIM, TCS, INFOSYS,TECH MAHINDRA, Patanjali as soon as Mihan.`,
       location: `MOUZA - SHANKARPUR`,
@@ -32,7 +32,7 @@ Location - The Project is Situated in Mouza - Sumthana Behind Godrej Properties 
     {
       id: 6,
       title: "Mahalaxmi Nagar - 43",
-      image: "/ongoingProject10.webp",
+      image: "/M-43-THUMBNAIL.jpg.jpeg",
       description: `Ready to Move Project by Mahalaxmi Nagar-43 offering Residential Plot With Aminities Behind Royal Gondwana School & Singapure City Shankarpur, Nagpur 
 An Affordable Price & Fully Developed NMRDA & RL upto 90% Bank Finance Available.`,
       location: `MOUZA - SHANKARPUR`,

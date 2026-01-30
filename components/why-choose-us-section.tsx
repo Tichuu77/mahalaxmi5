@@ -183,8 +183,8 @@ export  function WhyChooseUsSection() {
               
               <ul className="space-y-4">
                 {[
-                  "10+ years industry experience",
-                  "500+ satisfied clients",
+                  "13+ years industry experience",
+                  "17000+ satisfied clients",
                   "Industry-leading satisfaction rate"
                 ].map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3 group/item">
