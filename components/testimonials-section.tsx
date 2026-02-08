@@ -279,7 +279,7 @@ export  function TestimonialsSection() {
         <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
           <div className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg border-2 border-primary/20">
             <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2">
-              500+
+              17000+
             </div>
             <div className="text-xs sm:text-sm text-primary/70 font-semibold">Happy Clients</div>
           </div>

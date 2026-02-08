@@ -119,7 +119,7 @@ export default function HeroSection() {
             {/* Stats */}
             <div className={`flex flex-wrap justify-center gap-4 sm:gap-6 transition-all duration-700 delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
               <div className="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
-                <div className="text-3xl font-black text-primary mb-1">13+</div>
+                <div className="text-3xl font-black text-primary mb-1">70+</div>
                 <div className="text-sm text-white/80">Projects</div>
               </div>
               <div className="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
