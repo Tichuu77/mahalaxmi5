@@ -19,6 +19,21 @@ const projects: {
   upcoming: Project[]
 } = {
   ongoing: [
+
+    {
+      id: 11,
+       title: "Mahalaxmi Nagar - 50",
+         image: "/project_M-50.webp",
+         description: "Mahalaxmi Nagar-50 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg", 
+         location: "MOUZA-Shivmadka,Samruddhi Circle Touch", status: "ongoing",
+         
+    },
+     { id: 10,
+       title: "Mahalaxmi Nagar - 49",
+         image: "/project_M-49.jpeg",
+         description: "Mahalaxmi Nagar-49 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg", 
+         location: "MOUZA-SONDAPAR, MIHAN NEAR AIIMS AND NCI OUTER RING ROAD TOUCH", status: "ongoing",
+         },
      {
       id: 7,
       title: "Mahalaxmi Nagar - 45",
@@ -58,54 +73,24 @@ A Prime Location in Nagpur for Smart Investment.`,
     },
   ],
   completed: [],
-  upcoming: []
+  upcoming: [
+    {
+      id: 8,
+      title: "Mahalaxmi Nagar - 51",
+      image: "/project_M-51.png",
+      description: "Mahalaxmi Nagar-51 is a Premium Residential Plotted Development Project Located South Nagpur Near Samruddhi Mahamarg",
+      location: "MOUZA-Sumthana, Near D-Mart",
+      status: "upcoming"
+    }
+  ]
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
-  const [playerInstance, setPlayerInstance] = useState<any>(null)
 
-  useEffect(() => {
-    if (showVideo && project.videoId) {
-      const initPlayer = () => {
-        if ((window as any).cloudinary?.videoPlayer) {
-          const player = (window as any).cloudinary.videoPlayer(`player-${project.id}`, {
-            cloudName: 'dxujnm2sl',
-            publicId: project.videoId,
-            controls: true,
-            autoplay: true,
-            fluid: true,
-            aspectRatio: '9:16',
-            playbackRates: [0.5, 1, 1.5, 2]
-          });
-          setPlayerInstance(player);
-        }
-      };
-      
-      if ((window as any).cloudinary?.videoPlayer) {
-        initPlayer();
-      } else {
-        setTimeout(initPlayer, 500);
-      }
-    }
-    
-    return () => {
-      if (playerInstance) {
-        try {
-          playerInstance.dispose();
-        } catch (e) {}
-      }
-    };
-  }, [showVideo, project.videoId, project.id])
-  
   const handleCloseVideo = () => {
-    if (playerInstance) {
-      try {
-        playerInstance.pause();
-      } catch (e) {}
-    }
     setShowVideo(false);
   };
 
@@ -146,10 +131,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </button>
               <div className="flex-1 w-full">
                 <video
-                  id={`player-${project.id}`}
-                  className="cld-video-player"
+                  src={project.videoId ? `https://res.cloudinary.com/dxujnm2sl/video/upload/${project.videoId}.mp4` : undefined}
                   controls
-                  style={{ width: '100%', height: '100%' }}
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -246,21 +232,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function ProjectsSection() {
   const [activeTab, setActiveTab] = useState<"all" | "completed" | "ongoing" | "upcoming">("all")
-
-  useEffect(() => {
-    if (!document.getElementById('cloudinary-script')) {
-      const script = document.createElement('script');
-      script.id = 'cloudinary-script';
-      script.src = 'https://unpkg.com/cloudinary-video-player@2.1.3/dist/cld-video-player.min.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://unpkg.com/cloudinary-video-player@2.1.3/dist/cld-video-player.min.css';
-      document.head.appendChild(link);
-    }
-  }, [])
 
   const allProjects = [
     ...projects.ongoing,

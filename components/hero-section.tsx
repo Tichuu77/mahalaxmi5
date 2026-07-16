@@ -1,47 +1,13 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { ArrowRight, MapPin, Phone, CheckCircle, Sparkles } from "lucide-react"
 
 export default function HeroSection() {
-  const videoRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
-
-    const script = document.createElement('script')
-    script.src = 'https://unpkg.com/cloudinary-video-player@1.10.6/dist/cld-video-player.min.js'
-    script.async = true
-    document.body.appendChild(script)
-
-    const link = document.createElement('link')
-    link.href = 'https://unpkg.com/cloudinary-video-player@1.10.6/dist/cld-video-player.min.css'
-    link.rel = 'stylesheet'
-    document.head.appendChild(link)
-
-    script.onload = () => {
-      if (window.cloudinary && videoRef.current) {
-        window.cloudinary.videoPlayer('cloudinary-player', {
-          cloud_name: 'dxujnm2sl',
-          publicId: 'Mahalaxmi_1_1_v6khvx',
-          controls: false,
-          autoplay: true,
-          loop: true,
-          muted: true,
-          fluid: false,
-          playsinline: true,
-          bigPlayButton: false,
-          showLogo: false,
-          preload: 'auto',
-        })
-      }
-    }
-
-    return () => {
-      if (document.body.contains(script)) document.body.removeChild(script)
-      if (document.head.contains(link)) document.head.removeChild(link)
-    }
   }, [])
 
   const handleScrollToSection = (sectionId) => {
@@ -64,19 +30,16 @@ export default function HeroSection() {
 
       {/* Video Background - Enhanced Visibility */}
       <div className="absolute inset-0 z-0">
-        <div ref={videoRef} className="w-full h-full">
+        <div className="w-full h-full">
           <video
-            id="cloudinary-player"
-            className="cld-video-player"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              filter: 'brightness(0.8)'
-            }}
+            src="https://res.cloudinary.com/dxujnm2sl/video/upload/Mahalaxmi_1_1_v6khvx.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/plotDef.avif"
+            className="w-full h-full object-cover absolute inset-0"
+            style={{ filter: 'brightness(0.8)' }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -179,12 +142,4 @@ export default function HeroSection() {
       </div>
     </section>
   )
-}
-
-declare global {
-  interface Window {
-    cloudinary: {
-      videoPlayer: (elementId: string, options: any) => any;
-    };
-  }
 }
